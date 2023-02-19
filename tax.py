@@ -14,14 +14,22 @@ Raises:
      "TypeError for wrong arg types
 '''
 
-def calculateTax(amount, interest, purpose):
+def calculateTax(amount, interest, purpose) :
+    if type(amount) != float :  
+        raise TypeError("Must be float or int") 
+    if type(interest) != float : 
+        raise TypeError("Must be float or int")
+    
     tax = amount * (interest/100)
     result = { 
         "amount"  : amount, 
         "interest": interest, 
-        "tax"     : tax, 
+        "tax"     : tax,  
         "purpose" : purpose}
     return result
+    
 
-# used dict for better visibility and understanding of the values
+# - used dict for better visibility and understanding of the values
+# - the posibility to use any key separatly and add more values
+
 
